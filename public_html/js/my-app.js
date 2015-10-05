@@ -42,6 +42,16 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
     });
 });
 
+myApp.onPageInit('inflight-amenities-detail', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.prompt('Please confirm your order.', function (data) {
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        });
+    });
+});
+
 myApp.onPageInit('inflight-menu', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
         
