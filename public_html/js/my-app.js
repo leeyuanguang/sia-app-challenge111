@@ -41,3 +41,13 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
         });
     });
 });
+
+myApp.onPageInit('inflight-menu', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        
+    });
+});
