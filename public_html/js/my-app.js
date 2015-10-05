@@ -31,3 +31,53 @@ myApp.onPageInit('login', function (page) {
         }
     });
 });
+
+myApp.onPageInit('inflight-beverages-detail', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.prompt('Please enter quantity.', function (data) {
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        });
+    });
+});
+
+myApp.onPageInit('inflight-amenities-detail', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.prompt('Please enter quantity.', function (data) {
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        });
+    });
+});
+
+myApp.onPageInit('inflight-food-detail', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.prompt('Please enter quantity.', function (data) {
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        });
+    });
+});
+
+myApp.onPageInit('inflight-delight-me', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.prompt('Please enter quantity.', function (data) {
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        });
+    });
+});
+
+myApp.onPageInit('inflight-menu', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        
+            // @data contains input value
+
+            myApp.alert('The attendant will be right with you.');
+        
+    });
+});

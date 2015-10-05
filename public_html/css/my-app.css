@@ -5,10 +5,12 @@
 }
 
 .page-content{
-    //background-image: url("../img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-repeat: repeat;
 }
-
+.item-content {
+  background-color: #FFFFFF;
+}
 
 .row {
     margin-bottom: 15px;
