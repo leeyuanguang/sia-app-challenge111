@@ -70,6 +70,11 @@ myApp.onPageInit('inflight-delight-me', function (page) {
             myApp.alert('The attendant will be right with you.');
         });
     });
+    $$('.demo-confirm').on('click', function () {
+        myApp.confirm('Confirm your order.', function () {
+            myApp.alert('The attendant will be right with you!');
+        });
+    });
     
     // Custom Toolbar
     var pickerCustomToolbar = myApp.picker({
