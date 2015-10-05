@@ -1,16 +1,86 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+
+<div data-page="searchbar" class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">Beverages</div>
+            <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+        </div>
+    </div>
+    <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init">
+        <div class="searchbar-input">
+            <input type="search" placeholder="Search"/><a href="#" class="searchbar-clear"></a>
+        </div>
+    </form>
+    <div class="searchbar-overlay"></div>
+    <div class="page-content">
+        <div class="content-block">
+            <p>Media Lists are almost the same as Data Lists, but with a more flexible layout for visualization of more complex data, like products, services, userc, etc. You can even use them in <a href="#" data-popover=".popover-music" class="open-popover">popovers</a></p>
+        </div>
+        <div class="content-block-title">Songs</div>
+        <div class="list-block media-list search-here searchbar-found">
+            <ul>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/coke.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Coke</div>
+                                <div class="item-after">$10</div>
+                            </div>
+                            <div class="item-subtitle">Cold</div>
+                            <div class="item-text">Coca-Cola is a carbonated soft drink.</div>
+                        </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/water.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Water</div>
+                                <div class="item-after">$5</div>
+                            </div>
+                            <div class="item-subtitle">Cold</div>
+                            <div class="item-text">Quench your thirst.</div>
+                        </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/pepsi.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Pepsi</div>
+                                <div class="item-after">$5</div>
+                            </div>
+                            <div class="item-subtitle">Cold</div>
+                            <div class="item-text">A carbonated soft drink.</div>
+                        </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/milo.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Ice Milo</div>
+                                <div class="item-after">$12</div>
+                            </div>
+                            <div class="item-subtitle">Cold</div>
+                            <div class="item-text">A chocolate and malt powder that is mixed with hot or cold water or milk to produce a beverage popular in many parts of the world.</div>
+                        </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/beer.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Beer</div>
+                                <div class="item-after">$5</div>
+                            </div>
+                            <div class="item-subtitle">Cold</div>
+                            <div class="item-text">An alcoholic beverage produced by the saccharification of starch and fermentation of the resulting sugar.</div>
+                        </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                        <div class="item-media"><img src="img/redwine.jpg" width="80"/></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">Red Wine</div>
+                                <div class="item-after">$15</div>
+                            </div>
+                            <div class="item-subtitle">Warm</div>
+                            <div class="item-text">Red wine is a type of wine made from dark-coloured (black) grape varieties.</div>
+                        </div></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
