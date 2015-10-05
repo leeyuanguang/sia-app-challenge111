@@ -133,7 +133,7 @@ i.ks-icon-more {
   width: 30%;
 }
 .page[data-page="swiper-multiple"] .swiper-container {
-  margin: 0px 0 35px;
+  margin: 0px;
   font-size: 18px;
   height: 120px;
 }
