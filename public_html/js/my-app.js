@@ -47,7 +47,7 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
 
             var str = title + "," + price + "," + type;
             $.ajax({
-                url: "http://siaflightattendant.mybluemix.net/api/hello?title=Coke&quantity=1&seatNumber=72",
+                url: "http://localhost:8080/SIAFlightAttendant/api/hello?title=Coke&quantity=1&seatNumber=72",
                 type: 'post', // performing a POST request
                 data: {
                     param1: title,
