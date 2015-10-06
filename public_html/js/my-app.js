@@ -175,18 +175,13 @@ myApp.onPageInit('messages', function (page) {
 myApp.onPageInit('empty_conversation', function (page) {
     var conversationStarted = false;
     var answers = [
-        'Fuck you!',
-        'Bitch',
-        'Hm...',
-        'GO to hell you!!!',
-        'you asshole!!',
         'May be ;)',
         'Lorem ipsum dolor sit amet, consectetur',
         'What?',
         'Are you sure?',
         'Of course',
         'Need to think about it',
-        'Amazing!!!',
+        'Amazing!!!'
     ];
     var people = [
         {
