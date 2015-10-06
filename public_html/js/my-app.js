@@ -26,7 +26,8 @@ myApp.onPageInit('login', function (page) {
             myApp.alert('Invalid Login');
         } else {
             myApp.alert('Welcome Jason!', function () {
-                mainView.router.back();
+                //mainView.router.back();
+                mainView.router.loadPage("index-logged-in.html");
             });
         }
     });
@@ -37,7 +38,28 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
+            var title;
+            var price;
+            var type;
+            title = $('#title1').text();
+            price = $('#price1').text();
+            type = $('#type1').text();
+
+            var str = title + "," + price + "," + type;
+            $.ajax({
+                url: "http://localhost:8080/SIAFlightAttendant/api/hello?title=Coke&quantity=1&seatNumber=72",
+                type: 'post', // performing a POST request
+                data: {
+                    param1: title,
+                    param2: price
+                },
+                dataType: 'json',
+                success: function (data)
+                {
+                    
+                }
+            });
         });
     });
 });
@@ -47,7 +69,7 @@ myApp.onPageInit('inflight-amenities-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
 });
@@ -57,7 +79,7 @@ myApp.onPageInit('inflight-food-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
 });
@@ -67,12 +89,12 @@ myApp.onPageInit('inflight-delight-me', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
     $$('.demo-confirm').on('click', function () {
         myApp.confirm('Confirm your order.', function () {
-            myApp.alert('The attendant will be right with you!');
+            myApp.alert('We will be with you shortly.!');
         });
     });
 
@@ -125,7 +147,7 @@ myApp.onPageInit('inflight-menu', function (page) {
 
         // @data contains input value
 
-        myApp.alert('The attendant will be right with you.');
+        myApp.alert('We will be with you shortly.');
 
     });
 });
@@ -207,7 +229,7 @@ myApp.onPageInit('messages', function (page) {
     });
 });
 
-function removeFromCart(e){
-     $(this).closest('li').remove();
+function removeFromCart(e) {
+    $(this).closest('li').remove();
 }
 
