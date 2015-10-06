@@ -75,22 +75,22 @@ myApp.onPageInit('inflight-delight-me', function (page) {
             myApp.alert('The attendant will be right with you!');
         });
     });
-    
+
     // Custom Toolbar
     var pickerCustomToolbar = myApp.picker({
         input: '#ks-picker-custom-toolbar',
         rotateEffect: true,
-        toolbarTemplate: 
-            '<div class="toolbar">' +
+        toolbarTemplate:
+                '<div class="toolbar">' +
                 '<div class="toolbar-inner">' +
-                    '<div class="left">' +
-                        '<a href="#" class="link toolbar-randomize-link">Randomize</a>' +
-                    '</div>' +
-                    '<div class="right">' +
-                        '<a href="#" class="link close-picker">That\'s For Me!</a>' +
-                    '</div>' +
+                '<div class="left">' +
+                '<a href="#" class="link toolbar-randomize-link">Randomize</a>' +
                 '</div>' +
-            '</div>',
+                '<div class="right">' +
+                '<a href="#" class="link close-picker">That\'s For Me!</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>',
         cols: [
             {
                 values: ['Chilli Crab', 'Chicken Rice', 'Roti Prata', 'Ice Cream', 'Angus Beef', 'Fish n Chips'],
@@ -113,7 +113,7 @@ myApp.onPageInit('inflight-delight-me', function (page) {
 
                 var col2Values = picker.cols[2].values;
                 var col2Random = col2Values[Math.floor(Math.random() * col2Values.length)];
-                
+
                 picker.setValue([col0Random, col1Random, col2Random]);
             });
         }
@@ -122,10 +122,27 @@ myApp.onPageInit('inflight-delight-me', function (page) {
 
 myApp.onPageInit('inflight-menu', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
-        
-            // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
-        
+        // @data contains input value
+
+        myApp.alert('The attendant will be right with you.');
+
     });
 });
+
+
+
+$$('.open-left-panel').on('click', function (e) {
+    // 'left' position to open Left panel
+    myApp.openPanel('left');
+});
+
+$$('.open-right-panel').on('click', function (e) {
+    // 'right' position to open Right panel
+    myApp.openPanel('right');
+});
+
+$$('.panel-close').on('click', function (e) {
+    myApp.closePanel();
+});
+
