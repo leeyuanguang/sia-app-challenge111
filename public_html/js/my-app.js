@@ -45,10 +45,6 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
             price = $('#price1').text();
             type = $('#type1').text();
 
-            alert(title);
-            alert(price);
-            alert(type);
-
             var str = title + "," + price + "," + type;
             $.ajax({
                 url: "http://localhost:8080/SIAFlightAttendant/api/hello?param1=test&param2=hehe",
@@ -60,10 +56,9 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
                 dataType: 'json',
                 success: function (data)
                 {
-                    alert('success!')
+                    
                 }
             });
-            myApp.alert(str);
         });
     });
 });
