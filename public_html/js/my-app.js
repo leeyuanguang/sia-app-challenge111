@@ -26,7 +26,8 @@ myApp.onPageInit('login', function (page) {
             myApp.alert('Invalid Login');
         } else {
             myApp.alert('Welcome Jason!', function () {
-                mainView.router.back();
+                //mainView.router.back();
+                mainView.router.loadPage("index-logged-in.html");
             });
         }
     });
@@ -37,7 +38,7 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
             var title;
             var price;
             var type;
@@ -68,7 +69,7 @@ myApp.onPageInit('inflight-amenities-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
 });
@@ -78,7 +79,7 @@ myApp.onPageInit('inflight-food-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
 });
@@ -88,12 +89,12 @@ myApp.onPageInit('inflight-delight-me', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('The attendant will be right with you.');
+            myApp.alert('We will be with you shortly.');
         });
     });
     $$('.demo-confirm').on('click', function () {
         myApp.confirm('Confirm your order.', function () {
-            myApp.alert('The attendant will be right with you!');
+            myApp.alert('We will be with you shortly.!');
         });
     });
 
@@ -146,7 +147,7 @@ myApp.onPageInit('inflight-menu', function (page) {
 
         // @data contains input value
 
-        myApp.alert('The attendant will be right with you.');
+        myApp.alert('We will be with you shortly.');
 
     });
 });
