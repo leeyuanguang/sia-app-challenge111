@@ -827,7 +827,7 @@ p {
   z-index: 500;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  color: #9A8B73;
+  color: #FFFFFF;
 }
 .navbar b,
 .toolbar b {
@@ -843,7 +843,7 @@ p {
 .subnavbar a.link {
   text-decoration: none;
   position: relative;
-  color: #9A8B73;
+  color: #FFFFFF;
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
