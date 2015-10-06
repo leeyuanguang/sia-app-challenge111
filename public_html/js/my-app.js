@@ -232,4 +232,3 @@ myApp.onPageInit('messages', function (page) {
 function removeFromCart(e) {
     $(this).closest('li').remove();
 }
-
