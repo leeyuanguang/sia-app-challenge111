@@ -38,7 +38,28 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
         myApp.prompt('Please enter quantity.', function (data) {
             // @data contains input value
 
-            myApp.alert('We will be with you shortly..');
+            myApp.alert('The attendant will be right with you.');
+            var title;
+            var price;
+            var type;
+            title = $('#title1').text();
+            price = $('#price1').text();
+            type = $('#type1').text();
+
+            var str = title + "," + price + "," + type;
+            $.ajax({
+                url: "http://siaflightattendant.mybluemix.net/api/hello?title=Coke&quantity=1&seatNumber=72",
+                type: 'post', // performing a POST request
+                data: {
+                    param1: title,
+                    param2: price
+                },
+                dataType: 'json',
+                success: function (data)
+                {
+                    
+                }
+            });
         });
     });
 });
@@ -208,7 +229,7 @@ myApp.onPageInit('messages', function (page) {
     });
 });
 
-function removeFromCart(e){
-     $(this).closest('li').remove();
+function removeFromCart(e) {
+    $(this).closest('li').remove();
 }
 
