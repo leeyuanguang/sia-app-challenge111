@@ -156,7 +156,7 @@ myApp.onPageInit('messages', function (page) {
             name: 'Raheed Maden',
             avatar: 'img/avatar/people-q-c-100-100-7.jpg'
         }
-        
+
     ];
     var answerTimeout, isFocused;
 
@@ -165,7 +165,7 @@ myApp.onPageInit('messages', function (page) {
 
     // Initialize Messagebar
     var myMessagebar = myApp.messagebar('.messagebar');
-    
+
     $$('.messagebar a.send-message').on('touchstart mousedown', function () {
         isFocused = document.activeElement && document.activeElement === myMessagebar.textarea[0];
     });
@@ -191,7 +191,8 @@ myApp.onPageInit('messages', function (page) {
         });
         conversationStarted = true;
         // Add answer after timeout
-        if (answerTimeout) clearTimeout(answerTimeout);
+        if (answerTimeout)
+            clearTimeout(answerTimeout);
         answerTimeout = setTimeout(function () {
             var answerText = answers[Math.floor(Math.random() * answers.length)];
             var person = people[Math.floor(Math.random() * people.length)];
@@ -205,3 +206,8 @@ myApp.onPageInit('messages', function (page) {
         }, 2000);
     });
 });
+
+function removeFromCart(e){
+     $(this).closest('li').remove();
+}
+
