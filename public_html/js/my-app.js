@@ -38,6 +38,32 @@ myApp.onPageInit('inflight-beverages-detail', function (page) {
             // @data contains input value
 
             myApp.alert('The attendant will be right with you.');
+            var title;
+            var price;
+            var type;
+            title = $('#title1').text();
+            price = $('#price1').text();
+            type = $('#type1').text();
+
+            alert(title);
+            alert(price);
+            alert(type);
+
+            var str = title + "," + price + "," + type;
+            $.ajax({
+                url: "http://localhost:8080/SIAFlightAttendant/api/hello?param1=test&param2=hehe",
+                type: 'post', // performing a POST request
+                data: {
+                    param1: title,
+                    param2: price
+                },
+                dataType: 'json',
+                success: function (data)
+                {
+                    alert('success!')
+                }
+            });
+            myApp.alert(str);
         });
     });
 });
@@ -207,7 +233,7 @@ myApp.onPageInit('messages', function (page) {
     });
 });
 
-function removeFromCart(e){
-     $(this).closest('li').remove();
+function removeFromCart(e) {
+    $(this).closest('li').remove();
 }
 
