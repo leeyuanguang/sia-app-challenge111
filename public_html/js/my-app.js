@@ -22,9 +22,16 @@ myApp.onPageInit('login', function (page) {
     $$(page.container).find('.button').on('click', function () {
         var username = $$(page.container).find('input[name="username"]').val();
         var password = $$(page.container).find('input[name="password"]').val();
+        myApp.showPreloader('Verifying...')
         if (username == "" || password == "") {
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 800);
             myApp.alert('Invalid Login');
         } else {
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 1800);
             myApp.alert('Welcome Jason!', function () {
                 //mainView.router.back();
                 mainView.router.loadPage("index-logged-in.html");
@@ -35,51 +42,57 @@ myApp.onPageInit('login', function (page) {
 
 myApp.onPageInit('inflight-beverages-detail', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
-        myApp.prompt('Please enter quantity.', function (data) {
-            // @data contains input value
+        myApp.confirm('Are you sure you want to place a request?', function () {
+            myApp.showPreloader('Sending request...')
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 1200);
+            myApp.alert('Our flight attendants will be with you shortly.');
+        });
+        var title;
+        var price;
+        var type;
+        title = $('#title1').text();
+        price = $('#price1').text();
+        type = $('#type1').text();
 
-            myApp.alert('We will be with you shortly.');
-            var title;
-            var price;
-            var type;
-            title = $('#title1').text();
-            price = $('#price1').text();
-            type = $('#type1').text();
+        var str = title + "," + price + "," + type;
+        $.ajax({
+            url: "http://localhost:8080/SIAFlightAttendant/api/hello?title=Coke&quantity=1&seatNumber=72",
+            type: 'post', // performing a POST request
+            data: {
+                param1: title,
+                param2: price
+            },
+            dataType: 'json',
+            success: function (data)
+            {
 
-            var str = title + "," + price + "," + type;
-            $.ajax({
-                url: "http://localhost:8080/SIAFlightAttendant/api/hello?title=Coke&quantity=1&seatNumber=72",
-                type: 'post', // performing a POST request
-                data: {
-                    param1: title,
-                    param2: price
-                },
-                dataType: 'json',
-                success: function (data)
-                {
-                    
-                }
-            });
+            }
         });
     });
 });
 
 myApp.onPageInit('inflight-amenities-detail', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
-        myApp.prompt('Please enter quantity.', function (data) {
-            // @data contains input value
-
-            myApp.alert('We will be with you shortly.');
+        myApp.confirm('Are you sure you want to place a request?', function () {
+            myApp.showPreloader('Sending request...')
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 1200);
+            myApp.alert('Our flight attendants will be with you shortly.');
         });
     });
 });
 
 myApp.onPageInit('inflight-food-detail', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
-        myApp.prompt('Please enter quantity.', function (data) {
-            // @data contains input value
-
-            myApp.alert('We will be with you shortly.');
+        myApp.confirm('Are you sure you want to place a request?', function () {
+            myApp.showPreloader('Sending request...')
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 1200);
+            myApp.alert('Our flight attendants will be with you shortly.');
         });
     });
 });
@@ -87,10 +100,21 @@ myApp.onPageInit('inflight-food-detail', function (page) {
 myApp.onPageInit('inflight-menu', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
 
-        // @data contains input value
+        myApp.showPreloader('Generating delights...')
+        setTimeout(function () {
+            myApp.hidePreloader();
+        }, 2000);
+        myApp.alert('Our flight attendants will be with you shortly.');
 
-        myApp.alert('We will be with you shortly.');
+    });
+});
 
+myApp.onPageInit('krisair-beauty-detail', function (page) {
+    $$('.inflight-order-prompt').on('click', function () {
+        myApp.showIndicator();
+        setTimeout(function () {
+            myApp.hideIndicator();
+        }, 500);
     });
 });
 
