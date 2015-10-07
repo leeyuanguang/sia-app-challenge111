@@ -145,18 +145,13 @@ $.when(jqueryReady, cordovaReady).done(function () {
     myApp.onPageInit('messages', function (page) {
         var conversationStarted = false;
         var answers = [
-            'Fuck you!',
-            'Bitch',
-            'Hm...',
-            'GO to hell you!!!',
-            'you asshole!!',
             'May be ;)',
-            'Lorem ipsum dolor sit amet, consectetur',
+            'Great! I am going there too!',
             'What?',
             'Are you sure?',
-            'Of course',
-            'Need to think about it',
-            'Amazing!!!',
+            'Great place to shop!',
+            'I am looking for blazer too!',
+            'Wow!'
         ];
         var people = [
             {
