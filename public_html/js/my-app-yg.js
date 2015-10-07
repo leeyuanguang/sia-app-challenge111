@@ -28,6 +28,18 @@ $.when(jqueryReady, cordovaReady).done(function () {
         );
     });
 
+    myApp.onPageInit('krisair-category-listing', function (page) {
+        $$('.inflight-order-prompt').on('click', function () {
+            myApp.addNotification({
+                additionalClass:"cart-notification",
+                message: 'Item added to cart.'
+            });
+            setTimeout(function () {
+                myApp.closeNotification("cart-notification");
+            }, 2000);
+        });
+    });
+
     myApp.onPageInit('inflight-delight-me', function (page) {
         $$('.inflight-order-prompt').on('click', function () {
             myApp.showPreloader('Sending request...')
