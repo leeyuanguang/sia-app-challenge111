@@ -99,13 +99,26 @@ myApp.onPageInit('inflight-food-detail', function (page) {
 
 myApp.onPageInit('inflight-menu', function (page) {
     $$('.inflight-order-prompt').on('click', function () {
-
-        myApp.showPreloader('Generating delights...')
-        setTimeout(function () {
-            myApp.hidePreloader();
-        }, 2000);
-        myApp.alert('Our flight attendants will be with you shortly.');
-
+        myApp.confirm('Are you sure you want to place a request?', function () {
+            myApp.showPreloader('Sending request...')
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 1200);
+            myApp.alert('Our flight attendants will be with you shortly.');
+        });
+    });
+    $$('.inflight-delight-me-prompt').on('click', function () {
+        myApp.confirm('Are you sure you want to place a request?', function () {
+            myApp.showPreloader('Generating delights...');
+            setTimeout(function () {
+                myApp.hidePreloader();
+            }, 800);
+            myApp.showPreloader('Guessing your preferences...');
+                setTimeout(function () {
+                    myApp.hidePreloader();
+                }, 2800);
+            myApp.alert('Our flight attendants will be with you shortly.');
+        });
     });
 });
 
